@@ -4,10 +4,15 @@ import ScrollReveal from '../components/ui/ScrollReveal';
 import BlurText from '../components/ui/BlurText';
 import BorderGlow from '../components/ui/BorderGlow';
 import TrueFocus from '../components/ui/TrueFocus';
+import SEO from '../components/SEO';
 
 const About = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-[35%] md:pt-[10%] pb-10 px-6 font-sans overflow-hidden">
+      <SEO 
+        title="About TEDxAchievers | Our Legacy" 
+        description="Learn more about TEDxAchievers, our mission, and the history behind our events." 
+      />
       <div className="max-w-[100rem] mx-auto space-y-32">
         
         {/* Intro / Legacy Section */}

@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const Register = () => {
   const [isLogin, setIsLogin] = useState(false);
 
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
+      <SEO 
+        title="Register | TEDxAchievers" 
+        description="Create an account to manage your TEDxAchievers tickets and profile." 
+      />
       {/* Dark overlay with slight blur for glassmorphism focus */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
 

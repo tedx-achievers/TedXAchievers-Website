@@ -14,11 +14,13 @@ import DashboardTickets from './pages/dashboard/DashboardTickets';
 import DashboardShop from './pages/dashboard/DashboardShop';
 import DashboardProfile from './pages/dashboard/DashboardProfile';
 import ScrollToTop from './components/ScrollToTop';
+import { HelmetProvider } from 'react-helmet-async';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
+    <HelmetProvider>
+      <BrowserRouter>
+        <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -38,7 +40,8 @@ const App = () => {
           <Route path="profile" element={<DashboardProfile />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+    </HelmetProvider>
   );
 };
 
