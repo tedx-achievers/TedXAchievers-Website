@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import OptionWheel from '../components/OptionWheel';
 
 const schedule = [

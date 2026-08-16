@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import DotField from './DotField';
 
@@ -12,6 +11,7 @@ const TicketIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const GetReadySection = () => {
+  /*
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -42,8 +42,9 @@ const GetReadySection = () => {
 
     return () => clearInterval(interval);
   }, []);
+  */
 
-  const formatNumber = (num: number) => num.toString().padStart(2, '0');
+  
 
   return (
     <section className="relative overflow-hidden bg-[#050505] py-32 border-t border-white/5">

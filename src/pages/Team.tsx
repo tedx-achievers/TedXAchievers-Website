@@ -1,4 +1,3 @@
-import React from 'react';
 import Lanyard from '../components/Lanyard';
 
 const generateCardTexture = (name: string, role: string) => {
