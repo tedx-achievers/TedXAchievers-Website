@@ -8,6 +8,11 @@ import Speakers from './pages/Speakers';
 import Tickets from './pages/Tickets';
 import About from './pages/About';
 import Register from './pages/Register';
+import DashboardLayout from './layouts/DashboardLayout';
+import DashboardHome from './pages/dashboard/DashboardHome';
+import DashboardTickets from './pages/dashboard/DashboardTickets';
+import DashboardShop from './pages/dashboard/DashboardShop';
+import DashboardProfile from './pages/dashboard/DashboardProfile';
 import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
@@ -24,6 +29,13 @@ const App = () => {
           <Route path="tickets" element={<Tickets />} />
           <Route path="about" element={<About />} />
           <Route path="register" element={<Register />} />
+        </Route>
+
+        <Route path="/dashboard" element={<DashboardLayout />}>
+          <Route index element={<DashboardHome />} />
+          <Route path="tickets" element={<DashboardTickets />} />
+          <Route path="shop" element={<DashboardShop />} />
+          <Route path="profile" element={<DashboardProfile />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import SplitText from './SplitText';
 const HeroSection = () => {
   return (
-    <div className="h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex flex-col justify-end">
+    <div className="h-screen w-full bg-[url('/AUO_TEDxHS.png')] bg-cover bg-center bg-no-repeat relative flex flex-col justify-end">
       {/* Dark overlay fading to very dark at bottom to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/80 to-[#0f0f0f] z-0"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-[#0f0f0f] z-0"></div>
 
       {/* Content Container positioned at the bottom */}
       <div className="relative z-10 w-full max-w-[100rem] mx-auto px-6 lg:px-8 pb-12 md:pb-24 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
