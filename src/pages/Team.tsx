@@ -130,7 +130,7 @@ const teamMembers = [
 
 const Team = () => {
   return (
-    <div className="min-h-screen bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-fixed bg-no-repeat pt-[10%] pb-10 relative overflow-hidden flex flex-col">
+    <div className="min-h-screen bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-fixed bg-no-repeat pt-[35%]  md:pt-[10%] pb-10 relative overflow-hidden flex flex-col">
       {/* Dark overlay fading to black to ensure readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#050505]/95 to-[#050505] z-0"></div>
       
