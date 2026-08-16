@@ -98,10 +98,11 @@ const Register = () => {
           )}
 
           <button 
-            type="submit" 
-            className="w-full bg-[#e62b1e] hover:bg-red-600 text-white font-bold py-4 rounded-full uppercase tracking-widest text-sm transition-all mt-6 hover:-translate-y-0.5"
+            type="button" 
+            disabled
+            className="w-full bg-[#333] border border-white/5 text-gray-400 font-bold py-4 rounded-full uppercase tracking-widest text-sm transition-all mt-6 cursor-not-allowed"
           >
-            {isLogin ? 'Sign In' : 'Create Account'}
+            Coming Soon
           </button>
         </form>
 

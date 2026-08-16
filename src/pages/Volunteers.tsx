@@ -149,10 +149,11 @@ const Volunteers = () => {
           </div>
 
           <button 
-            type="submit" 
-            className="w-full bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-full transition-colors shadow-lg shadow-red-600/20 font-semibold tracking-wide text-lg"
+            type="button"
+            disabled
+            className="w-full bg-[#333] border border-white/5 text-gray-400 px-6 py-3 rounded-full transition-colors font-semibold tracking-wide text-lg cursor-not-allowed"
           >
-            Submit Application
+            Coming Soon
           </button>
         </form>
       </div>
