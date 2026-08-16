@@ -80,49 +80,49 @@ const generateCardTexture = (name: string, role: string) => {
 
 const teamMembers = [
   {
-    name: "Sarah Jenkins",
+    name: "Coming Soon",
     role: "Lead Organizer / Curator",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "David Chen",
+    name: "Coming Soon",
     role: "Co-Organizer",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "Amara Okonkwo",
+    name: "Coming Soon",
     role: "Head of Speaker Relations",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "Michael Torres",
+    name: "Coming Soon",
     role: "Head of Production",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "Elena Rodriguez",
+    name: "Coming Soon",
     role: "Marketing & PR Lead",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "James Wilson",
+    name: "Coming Soon",
     role: "Sponsorship Coordinator",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "Fatima Al-Sayed",
+    name: "Coming Soon",
     role: "Volunteer Coordinator",
     linkedin: "#",
     twitter: "#"
   },
   {
-    name: "Marcus Johnson",
+    name: "Coming Soon",
     role: "Logistics Lead",
     linkedin: "#",
     twitter: "#"
