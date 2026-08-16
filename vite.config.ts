@@ -11,11 +11,7 @@ const dynamicRoutes = [
   '/speakers',
   '/tickets',
   '/about',
-  '/register',
-  '/dashboard',
-  '/dashboard/tickets',
-  '/dashboard/shop',
-  '/dashboard/profile'
+  '/register'
 ]
 
 // https://vite.dev/config/
