@@ -228,12 +228,15 @@ const Volunteers = () => {
                   className="bg-[#151515] border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-600/50 focus:ring-1 focus:ring-red-600/50 transition-all font-mono text-sm appearance-none w-full"
                 >
                   <option value="" disabled>Select a role...</option>
-                  <option value="logistics_and_venue">Logistics & Venue Unit</option>
-                  <option value="finance_and_sponsorship">Finance & Sponsorship Unit</option>
+                  <option value="technical">Technical</option>
+                  <option value="videography">Videography</option>
+                  <option value="photography">Photography</option>
+                  <option value="content">Content</option>
+                  <option value="protocol_and_ushering">Protocol & Ushering</option>
                   <option value="welfare">Welfare</option>
-                  <option value="protocol_and_ushering">Protocol & Ushering Unit</option>
-                  <option value="technical">Technical Unit</option>
-                  <option value="media">Media</option>
+                  <option value="graphic_and_design">Graphic & Design</option>
+                  <option value="venue_and_decoration">Venue & Decoration</option>
+                  <option value="partnership_and_sponsorship">Partnership & Sponsorship</option>
                 </select>
                 <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
