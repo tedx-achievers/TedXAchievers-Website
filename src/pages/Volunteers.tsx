@@ -70,6 +70,8 @@ const Volunteers = () => {
         } else if (response.status === 409) {
           if (data.message?.includes('department')) {
             errorMessage = "Sorry, this department is full! Please select another department or role.";
+          } else if (data.message?.includes('limit')) {
+            errorMessage = data.message;
           } else {
             errorMessage = "You have already submitted an application with this email address.";
           }
