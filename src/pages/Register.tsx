@@ -189,8 +189,8 @@ const Register = () => {
 
           <button 
             type="submit" 
-            disabled={isLoading || (formData.password !== formData.confirmPassword && formData.password.length > 0)}
-            className={`w-full ${isLoading || (formData.password !== formData.confirmPassword && formData.password.length > 0) ? 'bg-[#333] text-gray-400 cursor-not-allowed' : 'bg-[#e62b1e] text-white hover:bg-red-700'} border border-white/5 font-bold py-4 rounded-full uppercase tracking-widest text-sm transition-all mt-6`}
+            disabled={true}
+            className={`w-full bg-[#333] text-gray-400 cursor-not-allowed border border-white/5 font-bold py-4 rounded-full uppercase tracking-widest text-sm transition-all mt-6`}
           >
             {isLoading ? 'Creating Account...' : 'Sign Up'}
           </button>
