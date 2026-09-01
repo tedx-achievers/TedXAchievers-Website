@@ -46,5 +46,10 @@ export const authService = {
   getProfile: async (): Promise<DashboardData> => {
     const response = await api.get('/api/dashboard/');
     return response.data;
+  },
+
+  getAuthProfile: async (): Promise<any> => {
+    const response = await api.get('/api/dashboard/profile');
+    return response.data;
   }
 };

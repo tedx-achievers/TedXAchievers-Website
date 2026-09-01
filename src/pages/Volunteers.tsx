@@ -444,8 +444,8 @@ const Volunteers = () => {
               <div className="mt-6 p-6 bg-[#151515] border border-white/10 rounded-xl">
                 <div className="flex justify-between items-start flex-wrap gap-4 mb-6">
                   <div>
-                    <p className="text-gray-500 text-xs uppercase tracking-widest font-mono mb-1">Applicant</p>
-                    <p className="text-white font-medium">{checkResult.fullName}</p>
+                    <p className="text-gray-500 text-xs uppercase tracking-widest font-mono mb-1">Applicant (Email)</p>
+                    <p className="text-white font-medium truncate max-w-[200px]" title={checkEmail}>{checkEmail}</p>
                   </div>
                   <div>
                     <p className="text-gray-500 text-xs uppercase tracking-widest font-mono mb-1">Status</p>
@@ -460,16 +460,18 @@ const Volunteers = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 text-sm font-mono">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-mono">
                   <div>
                     <p className="text-gray-500 text-xs uppercase mb-1">Role</p>
                     <p className="text-gray-300 capitalize">{checkResult.preferredRole?.replace(/_/g, ' ')}</p>
                   </div>
-                  <div>
-                    <p className="text-gray-500 text-xs uppercase mb-1">Department</p>
-                    <p className="text-gray-300">{checkResult.department}</p>
-                  </div>
-                  <div className="col-span-2">
+                  {checkResult.department && (
+                    <div>
+                      <p className="text-gray-500 text-xs uppercase mb-1">Department</p>
+                      <p className="text-gray-300">{checkResult.department}</p>
+                    </div>
+                  )}
+                  <div className="col-span-1 md:col-span-2">
                     <p className="text-gray-500 text-xs uppercase mb-1">Reference Code</p>
                     <div className="inline-flex items-center gap-3 bg-black/50 px-3 py-2 rounded">
                       <p className="text-white tracking-widest font-bold">{checkResult.referenceCode}</p>

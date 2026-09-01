@@ -6,7 +6,7 @@ export const useAuth = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
-  const { user, isAuthenticated, checkAuth, logout } = useAuthStore();
+  const { user, isAuthenticated, checkAuth, checkAdminAuth, logout } = useAuthStore();
 
   const handleRequest = async (requestFn: () => Promise<any>, onSuccess?: (data: any) => void) => {
     setIsLoading(true);
@@ -33,6 +33,11 @@ export const useAuth = () => {
     () => checkAuth() // Fetch profile on success
   );
 
+  const adminLogin = (credentials: any) => handleRequest(
+    () => authService.login(credentials),
+    () => checkAdminAuth() // Fetch admin profile on success
+  );
+
   const register = (data: any) => handleRequest(() => authService.register(data));
   const verifyEmail = (data: any) => handleRequest(() => authService.verifyEmail(data));
   const resendVerification = (data: any) => handleRequest(() => authService.resendVerification(data));
@@ -47,6 +52,7 @@ export const useAuth = () => {
     isLoading,
     error,
     login,
+    adminLogin,
     register,
     verifyEmail,
     resendVerification,

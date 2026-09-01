@@ -6,7 +6,7 @@ import { useAuth } from '../../hooks/useAuth';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  const { login, isLoading, error, clearError } = useAuth();
+  const { adminLogin, isLoading, error, clearError } = useAuth();
   
   const [showPassword, setShowPassword] = useState(false);
   
@@ -23,7 +23,7 @@ const AdminLogin = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await login(formData);
+      await adminLogin(formData);
       // Admin dashboard is protected by route checking the role
       navigate('/admin/dashboard');
     } catch (err) {

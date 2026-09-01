@@ -3,14 +3,14 @@ import { Outlet, Navigate, Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 
 const AdminLayout = () => {
-  const { user, isAuthenticated, isLoading, checkAuth, logout } = useAuthStore();
+  const { user, isAuthenticated, isLoading, checkAdminAuth, logout } = useAuthStore();
   const location = useLocation();
 
   useEffect(() => {
     if (!isAuthenticated) {
-      checkAuth();
+      checkAdminAuth();
     }
-  }, [isAuthenticated, checkAuth]);
+  }, [isAuthenticated, checkAdminAuth]);
 
   if (isLoading) {
     return (
