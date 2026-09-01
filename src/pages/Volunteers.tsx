@@ -20,6 +20,12 @@ const Volunteers = () => {
   const [checkResult, setCheckResult] = useState<any>(null);
   const [checkError, setCheckError] = useState<string | null>(null);
 
+  const [changeEmail, setChangeEmail] = useState('');
+  const [changeRole, setChangeRole] = useState('');
+  const [isChanging, setIsChanging] = useState(false);
+  const [changeResult, setChangeResult] = useState<string | null>(null);
+  const [changeError, setChangeError] = useState<string | null>(null);
+
   const [isCopied, setIsCopied] = useState(false);
   
   const handleCopy = (code: string) => {
@@ -130,6 +136,37 @@ const Volunteers = () => {
       setCheckError(err.message || "An unexpected error occurred. Please try again.");
     } finally {
       setIsChecking(false);
+    }
+  };
+
+  const handleChangeRoleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsChanging(true);
+    setChangeError(null);
+    setChangeResult(null);
+
+    try {
+      const API_URL = import.meta.env.VITE_API_URL || "https://tedxachievers-backend.onrender.com";
+      const response = await fetch(`${API_URL}/api/volunteers/change-role`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: changeEmail, preferredRole: changeRole }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to change role.");
+      }
+
+      setChangeResult(data.message || "Role updated successfully.");
+      setChangeRole('');
+    } catch (err: any) {
+      setChangeError(err.message || "An unexpected error occurred.");
+    } finally {
+      setIsChanging(false);
     }
   };
 
@@ -297,6 +334,75 @@ const Volunteers = () => {
             {isSubmitting ? 'Submitting...' : 'Submit Application'}
           </button>
         </form>
+
+        {/* Change Role Section */}
+        <div className="bg-[#0f0f0f]/80 backdrop-blur-2xl border border-white/5 rounded-[2rem] p-8 md:p-14 shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-7xl mx-auto my-12">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-4">
+              Change Preferred Role
+            </h2>
+            <p className="text-gray-400 font-mono text-sm">
+              Need to change your unit? Enter your email and select your new preferred role.
+            </p>
+            <div className="mt-4 inline-block px-4 py-2 bg-yellow-900/20 border border-yellow-500/30 rounded-lg text-yellow-500 text-xs font-mono">
+              Note: You can only change your preferred role once.
+            </div>
+          </div>
+
+          <form onSubmit={handleChangeRoleSubmit} className="max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row gap-4">
+              <input
+                type="email"
+                value={changeEmail}
+                onChange={(e) => setChangeEmail(e.target.value)}
+                required
+                className="flex-1 bg-[#151515] border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-600/50 focus:ring-1 focus:ring-red-600/50 transition-all font-mono text-sm placeholder:text-gray-700"
+                placeholder="Enter your email address"
+              />
+              <div className="relative flex-1">
+                <select
+                  value={changeRole}
+                  onChange={(e) => setChangeRole(e.target.value)}
+                  required
+                  className="bg-[#151515] border border-white/5 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-red-600/50 focus:ring-1 focus:ring-red-600/50 transition-all font-mono text-sm appearance-none w-full h-full"
+                >
+                  <option value="" disabled>Select new role...</option>
+                  <option value="technical">Technical</option>
+                  <option value="videography">Videography</option>
+                  <option value="photography">Photography</option>
+                  <option value="content">Content</option>
+                  <option value="protocol_and_ushering">Protocol & Ushering</option>
+                  <option value="welfare">Welfare</option>
+                  <option value="graphic_and_design">Graphic & Design</option>
+                  <option value="venue_and_decoration">Venue & Decoration</option>
+                  <option value="partnership_and_sponsorship">Partnership & Sponsorship</option>
+                </select>
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+                </div>
+              </div>
+              <button 
+                type="submit"
+                disabled={isChanging}
+                className={`md:w-auto w-full whitespace-nowrap ${isChanging ? 'bg-[#333] text-gray-400 cursor-not-allowed' : 'bg-white hover:bg-gray-200 text-black cursor-pointer'} px-8 py-4 rounded-xl transition-colors font-semibold tracking-wide`}
+              >
+                {isChanging ? 'Updating...' : 'Update Role'}
+              </button>
+            </div>
+
+            {changeError && (
+              <div className="mt-6 p-4 bg-red-900/50 border border-red-500/50 rounded-xl text-red-200 text-sm text-center">
+                {changeError}
+              </div>
+            )}
+
+            {changeResult && (
+              <div className="mt-6 p-4 bg-green-900/20 border border-green-500/30 rounded-xl text-green-400 text-sm text-center">
+                {changeResult}
+              </div>
+            )}
+          </form>
+        </div>
 
         {/* Check Status Section */}
         <div className="bg-[#0f0f0f]/80 backdrop-blur-2xl border border-white/5 rounded-[2rem] p-8 md:p-14 shadow-[0_0_50px_rgba(0,0,0,0.5)] w-full max-w-7xl mx-auto my-12">

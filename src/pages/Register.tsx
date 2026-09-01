@@ -1,10 +1,54 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
+import { useAuth } from '../hooks/useAuth';
 
 const Register = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const navigate = useNavigate();
+  const { register, isLoading, error, clearError } = useAuth();
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const [validationError, setValidationError] = useState<string | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (error) clearError();
+    if (validationError) setValidationError(null);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (formData.password !== formData.confirmPassword) {
+      setValidationError("Passwords do not match");
+      return;
+    }
+    if (formData.password.length < 8) {
+      setValidationError("Password must be at least 8 characters");
+      return;
+    }
+
+    try {
+      await register({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        password: formData.password
+      });
+      navigate('/verify-email', { state: { email: formData.email } });
+    } catch (err) {
+      // Error is handled by useAuth
+    }
+  };
 
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
@@ -34,29 +78,23 @@ const Register = () => {
             <img src="/logo-white.png" alt="TEDxAchievers Logo" className="h-8 object-contain mx-auto" />
           </Link>
           <h2 className="text-3xl font-black text-white uppercase tracking-wider">
-            {isLogin ? 'Welcome Back' : 'Join the Story'}
+            Join the Story
           </h2>
           <p className="text-gray-400 mt-2 text-sm">
-            {isLogin ? 'Sign in to access your tickets and schedule.' : 'Register to secure your spot at TEDxAchievers.'}
+            Register to secure your spot at TEDxAchievers.
           </p>
         </div>
 
-        <form className="space-y-5 relative z-10" onSubmit={(e) => e.preventDefault()}>
-          {isLogin ? (
-            <div>
-              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
-              <input 
-                type="email" 
-                placeholder="you@example.com" 
-                className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
-              />
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-4">
+        <form className="space-y-5 relative z-10" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Full Name</label>
                 <input 
                   type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   placeholder="John Doe" 
                   className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
                 />
@@ -65,61 +103,105 @@ const Register = () => {
                 <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Email Address</label>
                 <input 
                   type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   placeholder="you@example.com" 
                   className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
                 />
               </div>
             </div>
-          )}
 
-          {isLogin ? (
             <div>
-              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Password</label>
+              <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Phone Number</label>
               <input 
-                type="password" 
-                placeholder="••••••••" 
+                type="tel" 
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                placeholder="08012345678" 
                 className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
               />
             </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-4">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Password</label>
-                <input 
-                  type="password" 
-                  placeholder="••••••••" 
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
-                />
+                <div className="relative">
+                  <input 
+                    type={showPassword ? "text" : "password"} 
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                    placeholder="••••••••" 
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors focus:outline-none"
+                    tabIndex={-1}
+                  >
+                    {showPassword ? (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                    ) : (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    )}
+                  </button>
+                </div>
               </div>
               <div>
                 <label className="block text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2">Confirm</label>
-                <input 
-                  type="password" 
-                  placeholder="••••••••" 
-                  className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
-                />
+                <div className="relative">
+                  <input 
+                    type={showConfirmPassword ? "text" : "password"} 
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    required
+                    placeholder="••••••••" 
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 pr-12 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors focus:outline-none"
+                    tabIndex={-1}
+                  >
+                    {showConfirmPassword ? (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                    ) : (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                    )}
+                  </button>
+                </div>
               </div>
+            </div>
+
+          {(error || validationError) && (
+            <div className="p-4 bg-red-900/50 border border-red-500/50 rounded-xl text-red-200 text-sm text-center">
+              {validationError || error}
             </div>
           )}
 
           <button 
-            type="button" 
-            disabled
-            className="w-full bg-[#333] border border-white/5 text-gray-400 font-bold py-4 rounded-full uppercase tracking-widest text-sm transition-all mt-6 cursor-not-allowed"
+            type="submit" 
+            disabled={isLoading || (formData.password !== formData.confirmPassword && formData.password.length > 0)}
+            className={`w-full ${isLoading || (formData.password !== formData.confirmPassword && formData.password.length > 0) ? 'bg-[#333] text-gray-400 cursor-not-allowed' : 'bg-[#e62b1e] text-white hover:bg-red-700'} border border-white/5 font-bold py-4 rounded-full uppercase tracking-widest text-sm transition-all mt-6`}
           >
-            Coming Soon
+            {isLoading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
 
         <div className="mt-8 text-center relative z-10 pt-6 border-t border-white/10">
           <p className="text-gray-400 text-sm">
-            {isLogin ? "Don't have an account?" : "Already have an account?"}
-            <button 
-              onClick={() => setIsLogin(!isLogin)} 
-              className="ml-2 text-white hover:text-[#e62b1e] font-semibold transition-colors focus:outline-none"
-            >
-              {isLogin ? 'Sign Up' : 'Sign In'}
-            </button>
+            Already have an account?
+            <Link to="/login" className="ml-2 text-white hover:text-[#e62b1e] font-semibold transition-colors focus:outline-none">
+              Sign In
+            </Link>
           </p>
         </div>
       </motion.div>
