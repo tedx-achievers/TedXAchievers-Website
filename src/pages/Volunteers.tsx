@@ -12,8 +12,7 @@ import {
   ChevronDown, 
   ChevronUp, 
   Ticket,
-  Calendar,
-  Sparkles
+  Calendar
 } from 'lucide-react';
 
 const Volunteers = () => {
