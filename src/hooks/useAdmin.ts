@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { adminService } from '../services/adminService';
+import type { AttendeeFilters, VolunteerFilters, AuditLogFilters } from '../types/api';
 
 export const useAdmin = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,8 +26,9 @@ export const useAdmin = () => {
   };
 
   const getDashboardStats = useCallback(() => handleRequest(() => adminService.getDashboardStats()), []);
-  const getAttendees = useCallback((params?: any) => handleRequest(() => adminService.getAttendees(params)), []);
-  const getVolunteers = useCallback((params?: any) => handleRequest(() => adminService.getVolunteers(params)), []);
+  const getAttendees = useCallback((params?: AttendeeFilters) => handleRequest(() => adminService.getAttendees(params)), []);
+  const getVolunteers = useCallback((params?: VolunteerFilters) => handleRequest(() => adminService.getVolunteers(params)), []);
+  const getAuditLogs = useCallback((params?: AuditLogFilters) => handleRequest(() => adminService.getAuditLogs(params)), []);
   const updateVolunteerStatus = (id: string, status: 'approved' | 'rejected') => 
     handleRequest(() => adminService.updateVolunteerStatus(id, status));
   const exportAttendees = useCallback(() => adminService.exportAttendees(), []);
@@ -37,6 +39,7 @@ export const useAdmin = () => {
     getDashboardStats,
     getAttendees,
     getVolunteers,
+    getAuditLogs,
     updateVolunteerStatus,
     exportAttendees,
     clearError: () => setError(null)

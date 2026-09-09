@@ -19,6 +19,7 @@ import AdminLayout from './layouts/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminAttendees from './pages/admin/AdminAttendees';
 import AdminVolunteers from './pages/admin/AdminVolunteers';
+import AdminAuditLogs from './pages/admin/AdminAuditLogs';
 
 import DashboardLayout from './layouts/DashboardLayout';
 import DashboardHome from './pages/dashboard/DashboardHome';
@@ -63,6 +64,7 @@ const App = () => {
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="dashboard/attendees" element={<AdminAttendees />} />
             <Route path="dashboard/volunteers" element={<AdminVolunteers />} />
+            <Route path="dashboard/audit-logs" element={<AdminAuditLogs />} />
           </Route>
         </Route>
       </Routes>
