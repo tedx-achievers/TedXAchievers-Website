@@ -4,7 +4,7 @@ import { ShoppingCart, Heart } from 'lucide-react';
 const products = [
   {
     id: 1,
-    name: 'Official TEDxAchievers Hoodie',
+    name: 'Official TEDxAchievers University Hoodie',
     price: '$45.00',
     image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=600&auto=format&fit=crop',
     tag: 'Bestseller'

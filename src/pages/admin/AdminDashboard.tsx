@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-white tracking-tight mb-2">Overview</h1>
-        <p className="text-gray-400 text-sm">Key metrics and statistics for TEDxAchievers.</p>
+        <p className="text-gray-400 text-sm">Key metrics and statistics for TEDxAchievers University.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

@@ -33,8 +33,8 @@ const Login = () => {
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
       <SEO 
-        title="Login | TEDxAchievers" 
-        description="Sign in to your TEDxAchievers account." 
+        title="Login | TEDxAchievers University" 
+        description="Sign in to your TEDxAchievers University account." 
       />
       {/* Dark overlay with slight blur for glassmorphism focus */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
@@ -55,7 +55,7 @@ const Login = () => {
 
         <div className="text-center mb-8 relative z-10">
           <Link to="/" className="inline-block mb-6">
-            <img src="/logo-white.png" alt="TEDxAchievers Logo" className="h-8 object-contain mx-auto" />
+            <img src="/TEDX_Achievers_logo-white.png" alt="TEDxAchievers University Logo" className="h-12 object-contain mx-auto" />
           </Link>
           <h2 className="text-3xl font-black text-white uppercase tracking-wider">
             Welcome Back

@@ -26,8 +26,8 @@ const HeroSection = () => {
 
           {/* Massive Headline */}
           <SplitText
-            text="TEDxAchievers"
-            className="text-white text-6xl md:text-[6rem] lg:text-[8rem] font-bold tracking-tighter leading-none mt-2 drop-shadow-lg"
+            text="TEDxAchievers University"
+            className="text-white text-6xl md:text-[4rem] font-bold tracking-tighter leading-none mt-2 drop-shadow-lg"
             delay={50}
             duration={1.25}
             ease="power3.out"
@@ -40,7 +40,7 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p className="text-gray-300 text-lg md:text-xl font-medium max-w-lg mt-2 font-mono leading-relaxed">
-            Join 200+ creators, innovators, and industry leaders at TEDxAchievers
+            Join 200+ creators, innovators, and industry leaders at TEDxAchievers University
           </p>
         </div>
 
@@ -56,7 +56,7 @@ const HeroSection = () => {
            {/* CTA Button */}
            <Link
              to="/tickets"
-             className="bg-red-600 hover:bg-red-500 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-lg shadow-red-600/30 font-semibold tracking-wide text-lg flex items-center gap-3 group w-full sm:w-auto justify-center"
+             className="bg-red-600 hover:bg-red-500 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-lg shadow-red-600/30 font-semibold tracking-wide text-lg flex items-center gap-3 group w-full md:w-auto justify-center"
            >
              <FaTicketAlt className="group-hover:rotate-12 transition-transform" />
              Get your Ticket

@@ -6,7 +6,7 @@ const DashboardTickets = () => {
     <div className="flex flex-col gap-8 pb-10">
       <div className="mb-4">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-2">My Tickets</h1>
-        <p className="text-gray-400">View and manage your passes for TEDxAchievers.</p>
+        <p className="text-gray-400">View and manage your passes for TEDxAchievers University.</p>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-8 items-start">
@@ -28,7 +28,7 @@ const DashboardTickets = () => {
               <div className="flex justify-between items-start mb-12">
                 <div>
                   <h2 className="text-2xl font-bold text-white mb-1">Standard Pass</h2>
-                  <p className="text-red-500 font-mono text-sm tracking-widest uppercase">TEDxAchievers 2026</p>
+                  <p className="text-red-500 font-mono text-sm tracking-widest uppercase">TEDxAchievers University 2026</p>
                 </div>
                 <div className="bg-white/5 px-4 py-2 rounded-full border border-white/20">
                   <span className="text-white text-sm font-semibold">Row G • Seat 14</span>

@@ -34,8 +34,8 @@ const AdminLogin = () => {
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
       <SEO 
-        title="Admin Portal | TEDxAchievers" 
-        description="Admin portal for TEDxAchievers staff." 
+        title="Admin Portal | TEDxAchievers University" 
+        description="Admin portal for TEDxAchievers University staff." 
       />
       {/* Dark overlay with slight blur for glassmorphism focus */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
@@ -75,7 +75,7 @@ const AdminLogin = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              placeholder="admin@tedxachievers.com" 
+              placeholder="admin@tedxachieversuniversity.com.ng" 
               className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-[#e62b1e] focus:ring-1 focus:ring-[#e62b1e] transition-all"
             />
           </div>

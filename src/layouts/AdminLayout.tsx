@@ -44,7 +44,7 @@ const AdminLayout = () => {
         <div className="p-8 border-b border-white/10">
           <Link to="/" className="inline-block relative group">
             <div className="absolute -inset-2 bg-red-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <img src="/logo-white.png" alt="TEDxAchievers Logo" className="h-6 object-contain relative z-10" />
+            <img src="/TEDX_Achievers_logo-white.png" alt="TEDxAchievers University Logo" className="h-12 object-contain relative z-10" />
           </Link>
           <div className="mt-6 flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,1)]"></div>

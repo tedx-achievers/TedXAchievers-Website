@@ -43,7 +43,7 @@ const Navbar = () => {
     >
       <motion.div layout>
         <Link to="/" className="flex items-center z-50">
-          <img src="/logo-white.png" alt="TEDxAchievers Logo" className="h-8 md:h-10 object-contain" />
+          <img src="/TEDX_Achievers_logo-white.png" alt="TEDxAchievers University Logo" className="h-10 md:h-13 object-contain" />
         </Link>
       </motion.div>
       

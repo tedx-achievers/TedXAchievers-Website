@@ -51,7 +51,7 @@ const ResetPassword = () => {
 
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
-      <SEO title="Set New Password | TEDxAchievers" description="Set your new password." />
+      <SEO title="Set New Password | TEDxAchievers University" description="Set your new password." />
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
 
       <motion.div 

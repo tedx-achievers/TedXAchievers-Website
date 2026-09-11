@@ -53,8 +53,8 @@ const Register = () => {
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
       <SEO 
-        title="Register | TEDxAchievers" 
-        description="Create an account to manage your TEDxAchievers tickets and profile." 
+        title="Register | TEDxAchievers University" 
+        description="Create an account to manage your TEDxAchievers University tickets and profile." 
       />
       {/* Dark overlay with slight blur for glassmorphism focus */}
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
@@ -75,13 +75,13 @@ const Register = () => {
 
         <div className="text-center mb-8 relative z-10">
           <Link to="/" className="inline-block mb-6">
-            <img src="/logo-white.png" alt="TEDxAchievers Logo" className="h-8 object-contain mx-auto" />
+            <img src="/TEDX_Achievers_logo-white.png" alt="TEDxAchievers University Logo" className="h-12 object-contain mx-auto" />
           </Link>
           <h2 className="text-3xl font-black text-white uppercase tracking-wider">
             Join the Story
           </h2>
           <p className="text-gray-400 mt-2 text-sm">
-            Register to secure your spot at TEDxAchievers.
+            Register to secure your spot at TEDxAchievers University.
           </p>
         </div>
 

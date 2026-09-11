@@ -10,8 +10,8 @@ const Home = () => {
   return (
     <div className="flex flex-col w-full bg-[#0a0a0a]">
       <SEO 
-        title="TEDxAchievers | Ideas Worth Spreading" 
-        description="Join us for an inspiring day of talks and performances at TEDxAchievers." 
+        title="TEDxAchievers University | Ideas Worth Spreading" 
+        description="Join us for an inspiring day of talks and performances at TEDxAchievers University." 
       />
       <HeroSection />
       <Marquee />

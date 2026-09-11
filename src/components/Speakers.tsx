@@ -15,7 +15,7 @@ const Speakers = () => {
               <span className="text-gray-500">Industry Leaders</span>
             </h2>
             <p className="text-gray-400 font-mono text-lg max-w-xl leading-relaxed mb-10">
-              We are currently curating an incredible lineup of speakers for TEDxAchievers. 
+              We are currently curating an incredible lineup of speakers for TEDxAchievers University. 
               Stay tuned as we unveil the brilliant minds taking the stage.
             </p>
             

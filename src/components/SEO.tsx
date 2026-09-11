@@ -12,7 +12,7 @@ interface SEOProps {
 const SEO = ({ 
   title, 
   description, 
-  name = 'TEDxAchievers', 
+  name = 'TEDxAchievers University', 
   type = 'website',
   url = 'https://www.tedxachieversuniversity.com.ng',
   image = 'https://www.tedxachieversuniversity.com.ng/home_hero_bg.jpg'

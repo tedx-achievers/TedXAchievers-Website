@@ -50,7 +50,7 @@ const VerifyEmail = () => {
 
   return (
     <div className="min-h-screen w-full bg-[url('/home_hero_bg.jpg')] bg-cover bg-center bg-no-repeat relative flex items-center justify-center py-24 px-4 overflow-hidden">
-      <SEO title="Verify Email | TEDxAchievers" description="Verify your email address." />
+      <SEO title="Verify Email | TEDxAchievers University" description="Verify your email address." />
       <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
 
       <motion.div 

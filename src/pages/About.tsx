@@ -10,8 +10,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-[#050505] text-white pt-[35%] md:pt-[10%] pb-10 px-6 font-sans overflow-hidden">
       <SEO 
-        title="About TEDxAchievers | Our Legacy" 
-        description="Learn more about TEDxAchievers, our mission, and the history behind our events." 
+        title="About TEDxAchievers University | Our Legacy" 
+        description="Learn more about TEDxAchievers University, our mission, and the history behind our events." 
       />
       <div className="max-w-[100rem] mx-auto space-y-32">
         
@@ -160,7 +160,7 @@ const About = () => {
               <Link to="/volunteers" className="w-full bg-white text-black px-6 py-3 rounded-full font-bold uppercase tracking-wider text-sm text-center hover:bg-gray-200 transition-colors whitespace-nowrap">
                 Apply to Volunteer
               </Link>
-              <a href="mailto:partner@tedxachievers.com" className="w-full border-2 border-white/30 text-white px-6 py-3 rounded-full font-bold uppercase tracking-wider text-sm text-center hover:bg-white/10 hover:border-white transition-all whitespace-nowrap">
+              <a href="mailto:partner@tedxachieversuniversity.com.ng" className="w-full border-2 border-white/30 text-white px-6 py-3 rounded-full font-bold uppercase tracking-wider text-sm text-center hover:bg-white/10 hover:border-white transition-all whitespace-nowrap">
                 Partner With Us
               </a>
             </div>

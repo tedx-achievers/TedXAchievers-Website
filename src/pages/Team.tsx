@@ -147,7 +147,7 @@ const Team = () => {
             Meet the Team
           </h1>
           <p className="text-gray-400 font-mono text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
-            The passionate minds and dedicated volunteers working behind the scenes to bring TEDxAchievers to life.
+            The passionate minds and dedicated volunteers working behind the scenes to bring TEDxAchievers University to life.
           </p>
         </div>
 

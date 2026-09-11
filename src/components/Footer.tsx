@@ -9,10 +9,10 @@ const Footer = () => {
         {/* Left Side: Branding & Tagline */}
         <div className="max-w-sm">
           <div className="mb-6">
-            <img src="/logo-white.png" alt="TEDxAchievers Logo" className="h-10 object-contain" />
+            <img src="/TEDX_Achievers_logo-white.png" alt="TEDxAchievers University Logo" className="h-13 object-contain" />
           </div>
           <p className="text-sm text-gray-500 max-w-xs leading-relaxed">
-            TEDxAchievers is the platform you've been searching for. 
+            TEDxAchievers University is the platform you've been searching for. 
             Ideas worth spreading, stories worth telling.
           </p>
         </div>

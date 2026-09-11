@@ -4,7 +4,7 @@ const Marquee = () => {
   const texts = [
     
     "Early bird tickets now available",
-    "You can volunteer at tedxachievers",
+    "You can volunteer at TEDxAchievers University",
     "Limited seats available",
     "Reserve your spot now",
     "Join us live at Achievers University",

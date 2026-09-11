@@ -19,7 +19,7 @@ const DashboardHome = () => {
               Welcome back, <span className="text-red-500">Achiever</span>
             </h1>
             <p className="text-gray-400 max-w-lg">
-              Your TEDxAchievers experience is just around the corner. Check your tickets, browse exclusive merch, and manage your profile.
+              Your TEDxAchievers University experience is just around the corner. Check your tickets, browse exclusive merch, and manage your profile.
             </p>
           </div>
           <div className="bg-[#1a1a1a] border border-white/20 rounded-lg p-4 flex items-center gap-4 min-w-[200px]">

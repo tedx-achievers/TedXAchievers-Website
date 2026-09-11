@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "Why should I attend?",
-    answer: "Attending TEDxAchievers will give you the opportunity to hear from incredible thinkers and doers, network with like-minded individuals, and be inspired by fresh ideas that can spark meaningful change in your life and community."
+    answer: "Attending TEDxAchievers University will give you the opportunity to hear from incredible thinkers and doers, network with like-minded individuals, and be inspired by fresh ideas that can spark meaningful change in your life and community."
   },
   {
     question: "Would we be buying tickets? And how much?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "When and where is the event?",
-    answer: "TEDxAchievers is coming soon to Achievers University. The exact date, hall details, and schedule will be communicated to ticket holders."
+    answer: "TEDxAchievers University is coming soon to Achievers University. The exact date, hall details, and schedule will be communicated to ticket holders."
   },
   {
     question: "Is there a virtual attendance option?",

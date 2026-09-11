@@ -63,8 +63,8 @@ const Volunteers = () => {
   return (
     <>
       <SEO 
-        title="Volunteers - TEDxAchievers" 
-        description="Volunteer applications for TEDxAchievers are officially closed. Thank you to everyone who applied!" 
+        title="Volunteers - TEDxAchievers University" 
+        description="Volunteer applications for TEDxAchievers University are officially closed. Thank you to everyone who applied!" 
       />
 
       <div className="min-h-screen pt-[35%] md:pt-[10%] pb-20 flex flex-col items-center justify-center relative overflow-hidden bg-[#050505] text-white">
@@ -96,7 +96,7 @@ const Volunteers = () => {
             </div>
 
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-8 uppercase leading-snug">
-              Volunteer Applications for TEDxAchievers are Officially Closed.
+              Volunteer Applications for TEDxAchievers University are Officially Closed.
             </h2>
 
             <div className="space-y-6 text-gray-300 font-mono text-sm md:text-base leading-relaxed">
@@ -109,7 +109,7 @@ const Volunteers = () => {
               </p>
 
               <p className="text-white font-medium text-base md:text-lg pt-2">
-                More updates coming soon. See you at <span className="text-red-500 font-bold">TEDxAchievers</span>.
+                More updates coming soon. See you at <span className="text-red-500 font-bold">TEDxAchievers University</span>.
               </p>
             </div>
 
